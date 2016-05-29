@@ -15,12 +15,13 @@
         margin: auto;
         .login-info {
             padding-top: 20px;
+            text-align: center;
             a {
                 color: #fff;
             }
             .btn-social {
                 @extend .col-md-4;
-                text-align: center;
+                
             }
         }
     }
