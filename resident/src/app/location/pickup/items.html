@@ -1,8 +1,42 @@
-<h2>items</h2>   
-
-<div class="text-center">
-    <span class="glyphicon glyphicon-heart"></span>
-    <h3>Thanks For Your Money!</h3>
-    
-    <button type="submit" class="btn btn-danger">Submit</button>
+<h2>Quantity of items</h2>
+<p><strong>Give us a rough estime of how many reedemables you have for pick-up</strong></p>
+<p>(No less than 15 bottles please!)</p>
+<div class="form-group row">
+  <div class="col-xs-4">
+    <label>What type of items do you have?</label>
+  </div>
+  <div class="col-xs-8">
+		<div class="btn-group btn-group-justified" role="group" aria-label="...">
+		  <div class="btn-group" role="group">
+		    <button type="button" ng-click="pickup.formData.type='Bottles'" class="btn btn-default">Bottles</button>
+		  </div>
+		  <div class="btn-group" role="group">
+		    <button type="button" ng-click="pickup.formData.type='Cans'" class="btn btn-default">Cans</button>
+		  </div>
+		  <div class="btn-group" role="group">
+		    <button type="button" ng-click="pickup.formData.type='Both'" class="btn btn-default">Both</button>
+		  </div>
+		</div>    
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-4">
+    <label>Numer of bottles and cans:</label>
+  </div>
+  <div class="col-xs-8">
+    <select class="form-control" ng-model="pickup.formData.size">
+      <option value="" selected disabled>Choose one of the options</option>
+      <option value="15-25">15-25 (About 3 grocery bags)</option>
+      <option value="26-35">26-35 (About 4 grocery bags)</option>
+      <option value="36-50">36-50 (About 1/2 garbage bag)</option>
+      <option value="51+">51+ (About 1 black garbage bag)</option>
+    </select>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-3 pull-right">
+    <a ui-sref="pickup.notes" class="btn btn-block btn-info">
+            Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+  </div>
 </div>

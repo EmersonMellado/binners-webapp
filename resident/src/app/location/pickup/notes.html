@@ -1,21 +1,15 @@
 <h2>Notes</h2>
-<label>What's Your Console of Choice?</label>
-<div class="form-group">
-    <div class="radio">
-        <label>
-            <input type="radio" ng-model="pickup.formData.type" value="xbox" checked> I like XBOX
-        </label>
-    </div>
-    <div class="radio">
-        <label>
-            <input type="radio" ng-model="pickup.formData.type" value="ps"> I like PS4
-        </label>
-    </div>
-</div>
+<label>Please provide any further instructions for the binner.</label>
+<p>Let's make it easy for the local binners to find your bottles and cans! Leave any notes anout where to get the pick-up</p>
 <div class="form-group row">
-    <div class="col-xs-6 col-xs-offset-3">
-        <a ui-sref="pickup.items" class="btn btn-block btn-info">
-    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-    </div>
+  <div class="col-xs-12">
+    <textarea class="col-xs-12" rows="10" ng-model="pickup.formData.instructions"></textarea>
+  </div>
+</div>
+<div class="row col-xs-12">
+  <div class="text-center">
+    <span class="glyphicon glyphicon-heart"></span>
+    <h3>Thanks For!</h3>
+    <button type="submit" class="btn btn-danger">Submit Pick-up</button>
+  </div>
 </div>
