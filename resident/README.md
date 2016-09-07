@@ -25,5 +25,3 @@ You first need to install [node.js](http://nodejs.org/) if you do not already ha
 
 ## Any problems?
 Let us know at emersonmellado@gmail.com
-
-testing commit
