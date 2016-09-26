@@ -16,7 +16,8 @@
                 <ul class="nav navbar-nav">
                     <li ng-class="{ active: navbar.isActive('/')}"><a href="#/">Home</a></li>
                     <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/profile')}"><a  ui-sref="profile">Profile</a></li>
-                    <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/timeline')}"><a  ui-sref="timeline">Timeline</a></li>
+                    <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/pickup')}"><a  ui-sref="pickup">New Pickup</a></li>
+                    <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/pickupList')}"><a  ui-sref="pickupList">Pickups</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

@@ -1,5 +1,5 @@
 <bp-navbar></bp-navbar>
-<section>    
+<!-- <section>    
     <div class="page-main">
         <div class="card">
             <div class="card-size">
@@ -9,39 +9,54 @@
                 <div class="hovereffect">
                     <img class="img-responsive" src="assets/images/cards/card_c.jpg" alt="">
                     <div class="overlay">
-                        <h2>Control all pickups</h2>
+                        <h2>Control your pickups</h2>
                         <a class="info" ui-sref="pickup" href="#">Create new</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="page-main">
         <div class="card">
             <div class="card-size">
-                <div class="card-title purple">
-                    <h4>Users</h4>
-                </div>
-                <div class="hovereffect">
-                    <img class="img-responsive" src="assets/images/cards/card_b.jpg" alt="">
-                    <div class="overlay">
-                        <h2>Manage the users</h2>
-                        <a class="info" href="#/user">Access it</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-size">
-                <div class="card-title blue">
-                    <h4>Timeline</h4>
+                <div class="card-title red">
+                    <h4>Pickup</h4>
                 </div>
                 <div class="hovereffect">
                     <img class="img-responsive" src="assets/images/cards/card_c.jpg" alt="">
                     <div class="overlay">
-                        <h2>See the timeline</h2>
-                        <a class="info" href="#/timeline">Access it</a>
+                        <h2>Control your pickups</h2>
+                        <a class="info" ui-sref="pickupList" href="#">Listing</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+ -->
+ <section>
+    <header>
+        <h2>My Pickup List <a ui-sref="pickup" href="#" class="btn btn-default"><i class="fa fa-plus-circle" style="color: #000"></i>Create new</a></h2>
+        <bp-loading wait="main.loading"></bp-loading>    
+    </header>
+    <article>
+        <table class="table table-hover table-responsive" datatable="ng">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in main.pickups">
+                    <td>{{u.time}}</td>
+                    <td>{{u.instructions}}</td>
+                    <td>{{u.requester}}</td>
+                    <td><a ui-sref="usersEdit({ id: u._id})" class="btn btn-default"><i class="fa fa-edit" style="color: #000"></i>Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </article>          
 </section>

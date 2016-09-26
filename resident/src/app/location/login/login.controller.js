@@ -11,7 +11,9 @@
                 url: Api.BASE_API + '/auth',
                 method:'POST'
             }            
-            $auth.login(vm.user, opts).then(function() {
+            console.log("opts", opts);
+            $auth.login(vm.user, opts).then(function(data) {
+                $log.debug('data', data);
                 toastr.success('You have successfully signed in!');
                 $location.path('/home');
             }).catch(function(error) {                
@@ -24,7 +26,6 @@
         };
 
         vm.authenticate = function(provider) {
-            $log.debug(provider);
             $auth.authenticate(provider).then(function() {
                 toastr.success('You have successfully signed in with ' + provider + '!');
                 $location.path('/');

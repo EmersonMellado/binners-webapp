@@ -3,7 +3,7 @@
   angular.module('bProject')
     .controller('PickupController', PickupController);
 
-  function PickupController($auth) {
+  function PickupController($log, $auth, PickupService) {
     var vm = this;
     vm.formData = {};
 
@@ -17,11 +17,14 @@
       min: [7, 0],
       max: [18, 0]
     }
+/*
+    $log.debug($auth);
+    $log.debug($auth.getPayload());*/
 
     // function to process the form
     vm.processForm = function() {
       var pickup = {
-        "requester": "",
+        "requester": $auth.getPayload().user,
         "address": {
           "street": vm.formData.address,
           "city": "Vancouver",
@@ -34,15 +37,22 @@
             ]
           }
         },
-        "time": vm.formData.date + vm.formData.time,
+        "time": vm.formData.date + ' ' + vm.formData.time,
         "instructions": vm.formData.instructions,
         "items": [{
           "type": vm.formData.type,
-          "packageSize": vm.formData.size,
+          "packageSize": vm.formData.packageSize,
           "quantity": vm.formData.size
         }]
       }
-      console.log("vm.formData", vm.formData);
+
+      $log.debug(pickup);
+
+      PickupService.Create(pickup).then(function(data) {
+        $log.debug(data);
+      }, function(error) {
+        $log.debug(error);
+      });
     };
 
     vm.valuationDatePickerOpen = function($event) {

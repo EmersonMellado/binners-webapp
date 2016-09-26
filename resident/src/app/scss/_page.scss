@@ -9,7 +9,8 @@
 section {    
     header {
         height: 150px;
-        background: lighten($color-main, 30%);
+        //background: lighten($color-main, 30%);
+        background: $bg-header;
         padding: 5px 0 10px 30px;
         h2 {
             @extend .breadcrumb;

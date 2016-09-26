@@ -1,13 +1,17 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-              <div class="center-form">
-            <div class="panel-body">
-                <img src="assets/images/logo_white.png" class="logo center-block"/>
-                <h3 class="text-center">
-                    BINNER'S PROJECT
-                </h3>
-                <form method="post" ng-submit="signup.signup()" name="loginForm">
+<div class="panel-signup" ng-if="!signup.isAuthenticated()">
+    <div class="panel-header">
+        <img src="assets/images/logo_white.png" class="logo center-block" />
+        <h3 class="text-center">BINNER'S PROJECT - 2016</h3>
+    </div>
+    <div class="panel-signup-body">
+        <form method="post" ng-submit="signup.signup()" name="loginForm">
+                    <div class="form-group input-group er-border">
+                        <span class="input-group-addon">
+                          <i class="fa fa-user fa-2x"></i>
+                        </span>
+                        <input class="form-control input-lg transparent-input" type="name" name="name" ng-model="signup.user.name" placeholder="Your name"
+                        style="background-color:rgba(0,0,0,0) !important;border:none !important;box-shadow:none !important;" required autofocus/>
+                    </div>        
                     <div class="form-group input-group er-border">
                         <span class="input-group-addon">
                           <i class="fa fa-envelope fa-2x"></i>
@@ -34,13 +38,9 @@
                         </span>
                         <input class="form-control input-lg transparent-input" type="password" name="password" ng-model="signup.user.password2" placeholder="Repeat your password" style="background-color:rgba(0,0,0,0) !important;border:none !important;box-shadow:none !important;" required autofocus/>
                     </div>
-                    <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">
+                    <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-danger">
                         Create account
                     </button>
-                </form>
-            </div>
-        </div>
-
-        </div>
+        </form>
     </div>
 </div>

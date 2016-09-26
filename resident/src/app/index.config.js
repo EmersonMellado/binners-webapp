@@ -6,7 +6,11 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  function config($logProvider, toastrConfig, $httpProvider) {
+
+    // Http interceptor
+    $httpProvider.interceptors.push('binnersInterceptor');
+
     // Enable log
     $logProvider.debugEnabled(true);
 

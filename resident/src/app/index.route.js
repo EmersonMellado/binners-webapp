@@ -30,6 +30,23 @@
             resolve: {
                 loginRequired: loginRequired
             }
+
+        }).state('usersEdit', {
+            url: '/pickup/:id',
+            templateUrl: 'app/location/pickup/pickup.html',
+            controller: 'PickupController',
+            controllerAs: 'pickup',
+            resolve: {
+                loginRequired: loginRequired
+            }            
+        }).state('pickupList', {
+            url: '/pickupList',
+            templateUrl: 'app/location/pickup/list.html',
+            controller: 'PickupListController',
+            controllerAs: 'pickupList',
+            resolve: {
+                loginRequired: loginRequired
+            }
         }).state('pickup', {
             url: '/pickup',
             templateUrl: 'app/location/pickup/pickup.html',
@@ -43,19 +60,19 @@
             templateUrl: 'app/location/pickup/location.html',
             resolve: {
                 loginRequired: loginRequired
-            }    
+            }
         }).state('pickup.notes', {
             url: '/notes',
             templateUrl: 'app/location/pickup/notes.html',
             resolve: {
                 loginRequired: loginRequired
-            }  
+            }
         }).state('pickup.items', {
             url: '/items',
             templateUrl: 'app/location/pickup/items.html',
             resolve: {
                 loginRequired: loginRequired
-            }                                  
+            }
         }).state('timeline', {
             url: '/timeline',
             templateUrl: 'app/location/timeline/timeline.html',

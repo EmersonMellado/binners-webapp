@@ -1,0 +1,28 @@
+.panel-signup {
+    h3{
+        color: white;
+    }
+    max-height: 300px;
+    padding: 40px;
+    background: lighten($color-main, 10%);
+    .panel-signup-body {
+        @include border-radius(5px);
+        color: #fff;
+        background: $color-main;
+        padding: 20px;
+        max-width: 400px;
+        min-height: 350px;
+        margin: auto;
+        .signup-info {
+            padding-top: 20px;
+            text-align: center;
+            a {
+                color: #fff;
+            }
+            .btn-social {
+                @extend .col-md-4;
+                
+            }
+        }
+    }
+}
