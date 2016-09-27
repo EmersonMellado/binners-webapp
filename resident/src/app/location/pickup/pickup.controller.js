@@ -3,8 +3,12 @@
   angular.module('bProject')
     .controller('PickupController', PickupController);
 
-  function PickupController($log, $auth, PickupService) {
+  function PickupController($log, $auth, PickupService, $stateParams) {
     var vm = this;
+    vm._id = $stateParams.id;
+    if ($stateParams.id){
+      
+    }
     vm.formData = {};
 
     vm.dateConfig = {
@@ -17,9 +21,6 @@
       min: [7, 0],
       max: [18, 0]
     }
-/*
-    $log.debug($auth);
-    $log.debug($auth.getPayload());*/
 
     // function to process the form
     vm.processForm = function() {
