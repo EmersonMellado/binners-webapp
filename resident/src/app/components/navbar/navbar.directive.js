@@ -10,7 +10,7 @@
             scope: {
                 creationDate: '='
             },
-            controller: NavbarController,
+            controller: ['$auth', '$location', NavbarController],
             controllerAs: 'navbar',
             bindToController: true
         };

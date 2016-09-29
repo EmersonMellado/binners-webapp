@@ -3,7 +3,7 @@
 
 	angular
 		.module('bProject')
-		.controller('MainController', MainController);
+		.controller('MainController', ['PickupService', MainController]);
 
 	/** @ngInject */
 	function MainController(PickupService) {

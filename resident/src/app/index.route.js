@@ -31,14 +31,14 @@
                 loginRequired: loginRequired
             }
 
-        }).state('usersEdit', {
+/*        }).state('pickupEdit', {
             url: '/pickup/:id',
-            templateUrl: 'app/location/pickup/pickup.html',
-            controller: 'PickupController',
-            controllerAs: 'pickup',
+            templateUrl: 'app/location/pickup/edit.html',
+            controller: 'PickupEditController',
+            controllerAs: 'pickupEdit',
             resolve: {
                 loginRequired: loginRequired
-            }            
+            }  */          
         }).state('pickupList', {
             url: '/pickupList',
             templateUrl: 'app/location/pickup/list.html',

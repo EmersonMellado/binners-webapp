@@ -3,12 +3,10 @@
 
     angular
         .module('bProject')
-        .factory('UsersService', UsersService)
+        //.factory('UsersService', UsersService)
         //.factory('PickupService', PickupService)
-        .factory('LoginService', LoginService)
-
-    .factory('binnersInterceptor', binnersInterceptor);
-
+        .factory('LoginService', ['$q', '$http', '$log', 'Api', LoginService])
+        .factory('binnersInterceptor', ['$q', '$log', '$injector', binnersInterceptor]);
 
     function binnersInterceptor($q, $log, $injector) {
         return {
@@ -30,7 +28,7 @@
         };
     }
 
-    function UsersService($http, $auth, $log, Api) {
+    /*function UsersService($http, $auth, $log, Api) {
         var service = {};
 
         service.GetAll = GetAll;
@@ -70,7 +68,7 @@
         function url() {
             return Api.BASE_API + '/users';
         }
-    }
+    }*/
 
     function LoginService($q, $http, $log, Api) {
         var service = {};

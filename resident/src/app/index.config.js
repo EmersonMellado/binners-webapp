@@ -3,7 +3,7 @@
 
   angular
     .module('bProject')
-    .config(config);
+    .config(['$logProvider', 'toastrConfig', '$httpProvider', config]);
 
   /** @ngInject */
   function config($logProvider, toastrConfig, $httpProvider) {
